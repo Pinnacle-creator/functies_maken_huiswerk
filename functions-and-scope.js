@@ -10,11 +10,29 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // De administratie moet weten hoeveel studenten er dit blok cum laude zijn afgestudeerd (8 of hoger). Daar moeten namelijk speciale diploma's voor besteld worden.
 // Schrijf de stapjes om dit te kunnen checken eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe kan ik iedere waarde van de array checken op deze conditie?
+//       *door een for loop te gebruiken
 // * Hoe zorg ik ervoor dat dit ook werkt wanneer de array 100 entries bevat?
+//      *door in de for loop-log de notatie variabele[i] te gebruiken om over de gehele array elk nummer afzonderlijk aan te spreken.
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
+//      * met een if statement.
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6
+
+let amount = 0;
+
+for (let i = 0; i < grades.length; i++) {
+ console.log(grades[i]);
+    if (grades[i] >= 8) {
+        // console.log(grades[i])
+        // als we hier uitkomen, betekent dat dat het cijfer hoger of gelijk is aan 8
+        // wat de huidige waarde van amount ook is, daar willen we dan +1 bij optellen.
+        amount = amount + 1;
+    }
+}
+
+//console.log(amount);
+
 
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
@@ -27,8 +45,12 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+function cumLaude(gradesA) {
+    return gradesA;
 
-
+    const whichGrade = cumLaude(grades);
+    console.log(whichGrade);
+}
 
 /* Opdracht  2: Gemiddeld cijfer */
 
@@ -57,8 +79,6 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
-
-
 
 
 /* Bonusopdracht: hoogste cijfer */
