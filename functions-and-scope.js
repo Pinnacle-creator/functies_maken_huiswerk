@@ -52,6 +52,7 @@ function cumLaude(grades) {
 
     //for loop die over de lengte can de array loopt
     for (let i = 0; i < grades.length; i++) {
+
 //        if( grades[i] >= 8 ) amount++
         //wanneer de huidige array entry >=8
         if (grades[i] >= 8) {
@@ -105,13 +106,13 @@ console.log(avg);
 //declareer een functie genaamd averageGrade die input verwacht
 function averageGrade(input) {
 
-    //bepaal het nulpunt van de veranderlijke variabele
+    //bepaal het nulpunt van de veranderlijke variabele total
     let total = 0;
 
     //loop over de lengte van de input en hoog op met 1
     for (let i = 0; i < input.length; i++) {
 
-        //het totaal word telkens met 1 getal uit input opgehoogd
+        //total word telkens met 1 getal uit input opgehoogd
         total += input[i];
     }
     //avg is gelijk aan het totaal gedeeld door de lengte/bereik van de input
@@ -180,9 +181,6 @@ console.log('Average grade on grades array', decimal(averageGrade(grades)));
     // log het hoogste nummer
     console.log("The biggest number is: ", storeNumber);
 
-
-
-
 // ---- Verwachte uitkomst: 9
 
 
@@ -198,7 +196,8 @@ console.log('Average grade on grades array', decimal(averageGrade(grades)));
 
 // Declareer een functie met een parameter
 function biggestNumberInArray(arr) {
-    // gebruik dezelfde logica, echter met de arr.length als argument, omdat grades uiteindelijk in de functie gezet moetworden op de plaats van arr, waarna de hoogste berekent wordt.
+
+    // gebruik dezelfde logica, echter met de arr.length als argument, omdat grades uiteindelijk in de functie gezet moet worden op de plaats van arr, waarna de hoogste berekent wordt.
     let storeNumber = 0;
 
     for (let i = 0; i < arr.length; i++) {

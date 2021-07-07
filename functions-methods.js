@@ -9,7 +9,15 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+function getEmailDomain(address) {
+    const pos = address.indexOf("@");
+    const domainName = address.slice(pos + 1);
+    console.log(domainName);
+}
 
+getEmailDomain("n.eeken@novi-education.nl");
+getEmailDomain("t.mellink@novi.nl");
+getEmailDomain("a.wiersma@outlook.com");
 
 
 /* Opdracht  2 */
@@ -20,7 +28,23 @@
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+function typeOfEmail(emailAddress) {
+    const pos = emailAddress.indexOf("@");
+    const domain = emailAddress.slice(pos + 1);
+    let typeOfPerson = "Extern"
 
+    if (domain.includes("novi")) {
+        if (domain.includes("education")) {
+            typeOfPerson = "Student"
+        } else typeOfPerson = "Medewerker"
+    }
+    console.log(typeOfPerson);
+}
+
+typeOfEmail("n.eeken@novi-education.nl")
+typeOfEmail("t.mellink@novi.nl")
+typeOfEmail("novi.nlaapjesk@outlook.com")
+typeOfEmail("a.wiersma@outlook.com")
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
@@ -34,3 +58,31 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(emailAddress1) {
+    const dot = emailAddress1.includes(".");
+    const comma = emailAddress1.includes(",");
+    const at = emailAddress1.includes("@");
+
+
+
+    if(dot > at &&  emailAddress1.length) {
+       console.log("True")
+   }
+    if(comma === true) {
+        console.log("False")
+    }
+    if(at === false) {
+        console.log("False")
+    }
+    console.log(validity);
+
+
+
+}
+
+checkEmailValidity("n.eeken@novi.nl")
+checkEmailValidity("tessmellink@novi.nl")
+checkEmailValidity("n.eekenanovi.nl")
+checkEmailValidity("n.eeken@novinl.")
+checkEmailValidity("tessmellink@novi,nl")
